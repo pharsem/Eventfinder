@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eventfinder</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=<MAPS_API_KEY>&libraries=places&sensor=true"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="scripts/script.js"></script>
+
+  </head>
+  <body>
+    <div id="panel">
+        <div id="about">Eventfinder - &copy; <a href="http://pharsem.net">Petter Harsem</a> 2014</div>
+        <input class="options" id="search" type="textbox" placeholder="Search location">
+        <input class="options" type="button" value="Search" onclick="searchLocation()"><br />
+        <select class="options" id="selectCategory" onchange="loadEvents()">
+            <option value="all">All categories</option>
+        </select><br />
+        <select class="options" id="selectTime" onchange="loadEvents()"> 
+            <option value="today">Today</option>
+            <option value="this week">This week</option>
+            <option value="next week">Next week</option>
+            <option value="future">Future</option>
+        </select>
+        
+        <div id="numberWarning"></div>
+    
+      </div>
+    
+      <div id="map-canvas"></div>
+      
+      <div id="loadMessage"></div>
+  </body>
+</html>
